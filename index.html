@@ -8,274 +8,230 @@
 <title>Youcef Boudjenah Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Onest:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script>try{var s=localStorage.getItem("yb-theme");if(s==="dark"||s==="light")document.documentElement.setAttribute("data-theme",s)}catch(e){}</script>
 <style>
-/* Layout: light and dark themes. Hero with real screenshot collage; "built for" strip; seven case studies (gallery in a browser frame + problem/solution/features); project grid with screenshots that opens a detail panel; early work; about; contact. */
+/* Layout: an engineer's portfolio. Text-led intro with a spec table, focus areas, then case studies built from context, numbers, data flow, decisions with trade-offs and real code. Hairlines instead of cards, one accent, light and dark. */
 :root{
   color-scheme:light;
-  --bg:#FAFBFC; --white:#FFFFFF; --ink:#0F1419; --on-ink:#FFFFFF; --text:#2E353D; --muted:#646C76; --line:#E3E7EC; --soft:#F1F4F7;
-  --accent:#0A6B4B; --accent-2:#E8F3EE; --bar:#F3F5F8; --dot:#D5DAE0; --phone:#0F1419; --panel:#0F1419; --panel-2:#1C232B;
-  --amt:9%; --amt2:14%; --lift:0%; --c-grid:#EDF0F3; --c-bar:#A9C9BB; --c-none:#E3E7EC; --c-axis:#C9CFD6;
-  --check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23333' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --bg:#FFFFFF; --panel:#F6F7F8; --ink:#101418; --text:#343B43; --muted:#68717B; --line:#E4E7EB; --line-2:#D3D8DE;
+  --accent:#0A6B4B; --on-ink:#FFFFFF; --bar:#F1F3F5; --dot:#D3D8DE; --code:#F6F7F8; --code-ink:#29313A;
   --display:"Schibsted Grotesk","Segoe UI",system-ui,sans-serif;
-  --body:"Onest","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
-  --shadow:0 1px 2px rgba(15,20,25,.06),0 12px 32px -12px rgba(15,20,25,.18);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0E1319; --white:#161C24; --ink:#F1F4F8; --on-ink:#0E1319; --text:#C9D1DA; --muted:#929CA9; --line:#2A323D; --soft:#1F2731;
-  --accent:#43C497; --accent-2:#12352A; --bar:#1F2731; --dot:#3A4451; --phone:#2B3440; --panel:#1A212B; --panel-2:#0E1319;
-  --amt:20%; --amt2:34%; --lift:48%; --c-grid:#232B35; --c-bar:#2F6B56; --c-none:#2A323D; --c-axis:#3A4451;
-  --check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 36px -12px rgba(0,0,0,.7);
-  color-scheme:dark;
+  --bg:#0D1117; --panel:#151B23; --ink:#F0F3F6; --text:#C5CDD6; --muted:#8E98A4; --line:#262D36; --line-2:#37404B;
+  --accent:#4CC79B; --on-ink:#0D1117; --bar:#1B222B; --dot:#3A4451; --code:#151B23; --code-ink:#CBD3DC;
+  color-scheme:dark
 }}
 :root[data-theme="dark"]{
-  --bg:#0E1319; --white:#161C24; --ink:#F1F4F8; --on-ink:#0E1319; --text:#C9D1DA; --muted:#929CA9; --line:#2A323D; --soft:#1F2731;
-  --accent:#43C497; --accent-2:#12352A; --bar:#1F2731; --dot:#3A4451; --phone:#2B3440; --panel:#1A212B; --panel-2:#0E1319;
-  --amt:20%; --amt2:34%; --lift:48%; --c-grid:#232B35; --c-bar:#2F6B56; --c-none:#2A323D; --c-axis:#3A4451;
-  --check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 36px -12px rgba(0,0,0,.7);
-  color-scheme:dark;
+  --bg:#0D1117; --panel:#151B23; --ink:#F0F3F6; --text:#C5CDD6; --muted:#8E98A4; --line:#262D36; --line-2:#37404B;
+  --accent:#4CC79B; --on-ink:#0D1117; --bar:#1B222B; --dot:#3A4451; --code:#151B23; --code-ink:#CBD3DC;
+  color-scheme:dark
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-section,main{scroll-margin-top:76px}
+section,main{scroll-margin-top:72px}
 body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-.in{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.in{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-h1,h2,h3,h4{font-family:var(--display);color:var(--ink);letter-spacing:-.02em;text-wrap:balance;margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink);letter-spacing:-.015em;text-wrap:balance;margin:0;font-weight:700}
+p{margin:0}
 img{display:block}
+.mono{font-family:var(--mono)}
 
-/* header */
-.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--bg)}
-.site .in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:62px}
+.site .in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
 .who{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:700;color:var(--ink);white-space:nowrap}
-.who img{width:34px;height:34px;border-radius:50%;object-fit:cover}
-.site nav{display:flex;gap:6px;align-items:center;flex:none}
-.site nav a{white-space:nowrap}
-.site nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted);padding:7px 11px;border-radius:8px}
-.site nav a:hover{color:var(--ink);background:var(--soft)}
-.site nav a.cta{background:var(--ink);color:var(--on-ink)}
-.site nav a.cta:hover{background:var(--ink);color:var(--on-ink);opacity:.85}
+.who img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.site nav{display:flex;gap:22px;align-items:center;flex:none}
+.site nav a{text-decoration:none;font-size:14.5px;color:var(--muted);white-space:nowrap}
+.site nav a:hover{color:var(--ink)}
+.site nav a.cta{color:var(--ink);font-weight:600}
+.th{width:34px;height:34px;border-radius:6px;border:1px solid var(--line);background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;flex:none}
+.th:hover{border-color:var(--line-2)}
+.th svg{width:16px;height:16px}
 
-/* hero */
-.hero{padding-block:64px 40px;overflow:hidden}
-.hero .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:var(--accent);background:var(--accent-2);padding:6px 12px;border-radius:999px}
-.badge i{width:7px;height:7px;border-radius:50%;background:var(--accent)}
-.hero h1{font-size:clamp(36px,5.2vw,62px);line-height:1.04;font-weight:800;margin:18px 0 20px}
-.hero h1 span{color:var(--accent)}
-.hero p{font-size:18px;max-width:52ch;margin:0 0 28px;color:var(--text)}
-.btns{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:15px;font-weight:600;padding:12px 20px;border-radius:12px;text-decoration:none;cursor:pointer;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink)}
-.btn.light{background:var(--white);color:var(--ink);border-color:var(--line)}
-.btn.light:hover{border-color:var(--ink)}
-.nums{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
-.nums div{font-size:13.5px;color:var(--muted);line-height:1.3}
-.nums b{display:block;font-family:var(--display);font-size:30px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+.hero{padding-block:72px 56px}
+.hero .in{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:64px;align-items:start}
+.role{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.hero h1{font-size:clamp(32px,4.3vw,50px);line-height:1.1;margin:16px 0 20px}
+.hero p{font-size:18px;max-width:56ch}
+.links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:15px}
+.links a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--ink);font-weight:500}
+.links a:hover{color:var(--accent)}
+.links svg{width:15px;height:15px}
+.spec{border-top:1px solid var(--ink);font-size:14.5px}
+.spec caption{caption-side:top;text-align:left;font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-bottom:10px}
+table.spec{width:100%;border-collapse:collapse}
+.spec th,.spec td{padding:11px 0;border-bottom:1px solid var(--line);font-weight:400;text-align:left;vertical-align:baseline}
+.spec td{text-align:right;font-family:var(--mono);font-size:15px;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:16px}
+.hero p.built{margin-top:-16px;padding-top:18px;border-top:1px solid var(--line);font-size:15px;color:var(--muted);grid-column:1 / -1;max-width:none}
+.built b{color:var(--text);font-weight:500}
 
-.collage{position:relative;aspect-ratio:1.18;max-width:100%}
-.collage .fr{position:absolute;width:76%;box-shadow:var(--shadow)}
-.collage .f1{left:0;top:0}
-.collage .f2{right:0;top:22%;z-index:2}
-.collage .f3{left:8%;bottom:0;z-index:3;width:62%}
-.collage .ph{position:absolute;right:3%;bottom:-2%;width:23%;z-index:4}
+section.blk{padding-block:64px;border-top:1px solid var(--line)}
+.head{margin-bottom:36px;max-width:640px}
+.head h2{font-size:clamp(26px,3.2vw,36px);line-height:1.15}
+.head p{margin-top:12px;color:var(--muted);font-size:16.5px}
 
-/* browser + phone frames */
-.fr{background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.fr .bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;background:var(--bar);border-bottom:1px solid var(--line)}
-.fr .bar i{width:9px;height:9px;border-radius:50%;background:var(--dot);flex:none}
-.fr .bar span{margin-left:8px;font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.focus{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.focus h3{font-size:17px;line-height:1.3;margin-bottom:8px}
+.focus p{font-size:15px}
+.focus small{display:block;margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+.case{padding-block:56px;border-top:1px solid var(--line)}
+.case:first-child{border-top:0;padding-top:0}
+.c-head{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.c-logo{width:48px;height:48px;border-radius:10px;background:#FFFFFF;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;flex:none}
+.c-logo img{width:100%;height:100%;object-fit:contain;padding:5px}
+.c-logo span{font-family:var(--display);font-weight:700;color:#3A4451;font-size:17px}
+.c-head h3{font-size:clamp(24px,2.8vw,30px);line-height:1.15}
+.c-head p{color:var(--muted);font-size:16px}
+.c-main{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:44px;align-items:start}
+.side{display:grid;gap:22px;min-width:0}
+.side p.ctx{font-size:16.5px}
+.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.nums div{background:var(--bg);padding:12px 14px;min-width:0}
+.nums b{display:block;font-family:var(--mono);font-weight:500;font-size:19px;color:var(--ink);font-variant-numeric:tabular-nums}
+.nums span{font-size:13px;color:var(--muted)}
+.stack{font-family:var(--mono);font-size:12.5px;color:var(--muted);line-height:1.8}
+.src{font-size:14px;color:var(--muted)}
+.src a{color:var(--accent);font-weight:500}
+.fr{background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.fr .bar{display:flex;align-items:center;gap:6px;height:28px;padding:0 11px;background:var(--bar);border-bottom:1px solid var(--line)}
+.fr .bar i{width:8px;height:8px;border-radius:50%;background:var(--dot);flex:none}
+.fr .bar span{margin-left:7px;font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .fr img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
-.ph{background:var(--phone);border-radius:26px;padding:7px;box-shadow:var(--shadow)}
-.ph img{width:100%;border-radius:20px;aspect-ratio:9/19.5;object-fit:cover;object-position:top}
-
-/* built for */
-.built{border-block:1px solid var(--line);background:var(--white)}
-.built .in{display:flex;gap:10px 28px;align-items:center;flex-wrap:wrap;padding-block:20px}
-.built h4{font-family:var(--body);font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
-.built ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
-.built li{font-size:14px;font-weight:500;color:var(--ink);background:var(--soft);padding:6px 12px;border-radius:999px}
-
-/* sections */
-section{padding-block:80px}
-.head{max-width:680px;margin-bottom:40px}
-.kick{font-size:14px;font-weight:600;color:var(--accent);margin-bottom:10px}
-.head h2{font-size:clamp(30px,4vw,44px);font-weight:800;line-height:1.08}
-.head p{margin:14px 0 0;font-size:17px;color:var(--muted)}
-
-/* case study */
-.cases{display:grid;gap:28px}
-.case{--b:#1E40AF;--bt:color-mix(in srgb,var(--b),#FFFFFF var(--lift));background:var(--white);border:1px solid var(--line);border-radius:22px;overflow:hidden}
-.case-top{display:flex;align-items:center;gap:16px;padding:24px 28px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.case-top .lg{width:52px;height:52px;border-radius:12px;background:#FFFFFF;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;flex:none}
-.case-top .lg img{width:100%;height:100%;object-fit:contain;padding:5px}
-.case-top .tt{min-width:0;flex:1 1 240px}
-.case-top h3{font-size:26px;font-weight:800;line-height:1.1}
-.case-top .one{color:var(--bt);font-weight:600;font-size:15px;margin-top:2px}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tags span{font-size:12.5px;font-weight:500;padding:4px 10px;border-radius:999px;background:var(--soft);color:var(--text)}
-.case-body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
-.stage{background:color-mix(in srgb,var(--b) var(--amt),var(--white));padding:28px;display:grid;gap:14px;align-content:center;min-width:0}
-.stage .fr{box-shadow:var(--shadow)}
-.thumbs{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
-.thumbs button{all:unset;cursor:pointer;flex:none;width:96px;border-radius:8px;overflow:hidden;border:2px solid transparent;background:var(--white);box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.thumbs button img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
-.thumbs button[aria-current="true"]{border-color:var(--bt)}
-.thumbs button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
-.info{padding:28px;display:grid;gap:20px;align-content:center;min-width:0}
-.info h4,.feats h4{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.info p{margin:0}
-.feat{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.feat li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:8px;font-size:15px}
-.feat li::before{content:"";width:18px;height:18px;margin-top:3px;border-radius:50%;background:color-mix(in srgb,var(--b) var(--amt2),var(--white)) var(--check) center/12px no-repeat}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips span{font-family:var(--mono);font-size:12px;padding:3px 8px;border-radius:6px;background:var(--soft);color:var(--text)}
-.case .more-link{font-weight:600;color:var(--bt)}
-.private{font-size:13.5px;color:var(--muted)}
-.extra{display:grid;gap:20px}
-.feats{padding:22px 28px 26px;border-top:1px solid var(--line)}
-.feats .feat{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px 28px}
 .zoomable{cursor:zoom-in}
-dialog.wide{width:min(1280px,calc(100vw - 24px))}
-.zoom{overflow:auto;-webkit-overflow-scrolling:touch}
-.zoom img{width:100%;max-width:none;min-width:900px}
-.zoomcap{padding:14px 20px;font-weight:600;color:var(--ink)}
-.toggle{display:none;font:inherit;font-size:14.5px;font-weight:600;padding:11px 16px;border-radius:12px;border:1px solid color-mix(in srgb,var(--b) 35%,var(--white));background:color-mix(in srgb,var(--b) var(--amt),var(--white));color:var(--bt);cursor:pointer}
+.thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto;scrollbar-width:thin}
+.thumbs button{all:unset;cursor:pointer;flex:none;width:84px;border-radius:5px;overflow:hidden;border:1px solid var(--line);opacity:.65}
+.thumbs button img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.thumbs button[aria-current="true"]{opacity:1;border-color:var(--ink)}
+.thumbs button:hover{opacity:1}
+.thumbs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.code{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--code);min-width:0}
+.code .cap{font-family:var(--mono);font-size:12px;color:var(--muted);padding:9px 14px;border-bottom:1px solid var(--line)}
+.code pre{margin:0;padding:14px;overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.65;color:var(--code-ink);tab-size:2}
+.detail{margin-top:32px;display:grid;gap:30px}
+.lab{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-bottom:12px}
+.flow{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 0;align-items:center}
+.flow li{display:flex;align-items:center;font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+.flow li span{padding:7px 11px;border:1px solid var(--line-2);border-radius:5px;background:var(--bg)}
+.flow li:not(:last-child)::after{content:"";width:18px;height:1px;background:var(--line-2);flex:none}
+.decs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.decs h4{font-size:16px;line-height:1.3;margin-bottom:7px}
+.decs p{font-size:14.5px}
+.decs p.t{margin-top:8px;color:var(--muted)}
+.decs p.t b{font-weight:500;color:var(--text)}
+details.ex summary{cursor:pointer;font-family:var(--mono);font-size:12.5px;color:var(--muted);padding:2px 0}
+details.ex summary:hover{color:var(--ink)}
+details.ex .code{margin-top:10px}
+.toggle{display:none;width:100%;font:inherit;font-size:14.5px;font-weight:500;padding:10px 14px;border-radius:6px;border:1px solid var(--line-2);background:transparent;color:var(--ink);cursor:pointer}
 
-/* grid of other projects */
-.bar2{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:22px}
-.filters{display:flex;flex-wrap:wrap;gap:6px;min-width:0;flex:1 1 100%}
-.filters::-webkit-scrollbar{display:none}
-.f{all:unset;cursor:pointer;flex:none;white-space:nowrap;padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;background:var(--white);border:1px solid var(--line);color:var(--text)}
-.f:hover{border-color:var(--ink)}
-.f[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.prac{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px}
+.prac div{padding:18px 0;border-top:1px solid var(--line)}
+.prac h3{font-size:17px;margin-bottom:6px}
+.prac p{font-size:15px}
+
+.bar2{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.filters{display:flex;flex-wrap:wrap;gap:4px 18px;min-width:0;flex:1 1 100%}
+.f{all:unset;cursor:pointer;white-space:nowrap;padding:4px 0;font-size:14.5px;color:var(--muted);border-bottom:1px solid transparent}
+.f:hover{color:var(--ink)}
+.f[aria-pressed="true"]{color:var(--ink);font-weight:500;border-bottom-color:var(--ink)}
 .f:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-#q{flex:0 1 280px;min-width:0;font:inherit;font-size:15px;padding:9px 14px;border:1px solid var(--line);border-radius:12px;background:var(--white);color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:18px}
-.card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .15s,box-shadow .15s}
-.card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.card .pic{aspect-ratio:16/10;background:var(--soft);display:grid;place-items:center;overflow:hidden;border-bottom:1px solid var(--line)}
+#q{flex:0 1 300px;min-width:0;font:inherit;font-size:15px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:28px 24px}
+.card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;min-width:0}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.card .pic{aspect-ratio:16/10;background:var(--panel);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line);border-radius:6px}
+.card:hover .pic{border-color:var(--line-2)}
 .card .pic img.shot{width:100%;height:100%;object-fit:cover;object-position:top}
-.card .pic img.logo{width:96px;max-width:46%;max-height:72%;object-fit:contain;background:#FFFFFF;padding:8px;border-radius:12px}
-.card .pic .ini{font-family:var(--display);font-weight:800;font-size:34px;color:var(--muted)}
-.card .bd{padding:16px 18px 18px;display:grid;gap:6px}
-.card .ind{font-size:12.5px;font-weight:600;color:var(--accent)}
-.card h3{font-size:18px;font-weight:700;line-height:1.2}
-.card p{margin:0;font-size:14.5px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.card .open{font-size:13.5px;font-weight:600;color:var(--ink);margin-top:4px}
-.showall{display:block;margin:28px auto 0}
-.empty{grid-column:1 / -1;padding:40px;text-align:center;color:var(--muted);background:var(--white);border:1px dashed var(--line);border-radius:16px}
+.card .pic img.logo{width:84px;max-width:44%;max-height:70%;object-fit:contain;background:#FFFFFF;padding:7px;border-radius:8px}
+.card .pic .ini{font-family:var(--mono);font-size:24px;color:var(--muted)}
+.card .bd{padding-top:11px;display:grid;gap:3px}
+.card h3{font-size:16px;line-height:1.25}
+.card p{font-size:14px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card small{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.showall{display:block;margin:32px auto 0;font:inherit;font-size:14.5px;font-weight:500;padding:9px 18px;border-radius:6px;border:1px solid var(--line-2);background:transparent;color:var(--ink);cursor:pointer}
+.empty{grid-column:1 / -1;padding:32px 0;color:var(--muted)}
 
-/* dialog */
-dialog{border:0;padding:0;border-radius:20px;width:min(860px,calc(100vw - 32px));max-height:calc(100dvh - 40px);overflow:auto;box-shadow:0 30px 80px rgba(15,20,25,.35);color:var(--text);background:var(--white)}
-dialog::backdrop{background:rgba(15,20,25,.45)}
-.dl-pic{background:var(--soft);padding:20px}
-.dl-pic .logo-big{display:grid;place-items:center;aspect-ratio:16/7}
-.dl-pic .logo-big img{max-width:150px;max-height:130px;object-fit:contain;background:#FFFFFF;padding:10px;border-radius:14px}
-.dl-pic .logo-big .ini{font-family:var(--display);font-weight:800;font-size:56px;color:var(--muted)}
-.dl-bd{padding:24px 28px 28px;display:grid;gap:16px}
-.dl-bd h3{font-size:28px;font-weight:800}
-.dl-meta{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 18px;font-size:15px;margin:0}
+dialog{border:1px solid var(--line-2);padding:0;border-radius:10px;width:min(760px,calc(100vw - 32px));max-height:calc(100dvh - 40px);overflow:auto;box-shadow:0 24px 70px rgba(0,0,0,.35);color:var(--text);background:var(--bg)}
+dialog.wide{width:min(1280px,calc(100vw - 24px))}
+dialog::backdrop{background:rgba(10,14,18,.5)}
+.dl-pic{background:var(--panel);padding:18px}
+.logo-big{display:grid;place-items:center;aspect-ratio:16/6}
+.logo-big img{max-width:130px;max-height:110px;object-fit:contain;background:#FFFFFF;padding:10px;border-radius:10px}
+.logo-big .ini{font-family:var(--mono);font-size:40px;color:var(--muted)}
+.dl-bd{padding:22px 26px 26px;display:grid;gap:14px}
+.dl-bd h3{font-size:24px}
+.dl-meta{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:7px 18px;font-size:15px;margin:0}
 .dl-meta dt{color:var(--muted)}
 .dl-meta dd{margin:0}
-.x{position:sticky;top:12px;float:right;margin:12px 12px 0 0;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--white);cursor:pointer;font-size:20px;line-height:1;color:var(--ink)}
+.x{position:sticky;top:10px;float:right;margin:10px 10px 0 0;z-index:2;width:32px;height:32px;border-radius:6px;border:1px solid var(--line-2);background:var(--bg);cursor:pointer;font-size:18px;line-height:1;color:var(--ink)}
+.zoom{overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom img{width:100%;max-width:none;min-width:900px}
+.zoomcap{padding:13px 18px;font-family:var(--mono);font-size:13px;color:var(--ink)}
 
+.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:64px;align-items:start}
+.about p+p{margin-top:12px}
+.skills{margin:0;font-size:15px}
+.skills div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.skills dt{color:var(--muted)}
+.skills dd{margin:0}
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:end}
+.contact h2{font-size:clamp(26px,3.2vw,36px)}
+.contact p{margin-top:10px;color:var(--muted);font-size:16.5px}
+.mail{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.mail code{font-family:var(--mono);font-size:15px;color:var(--ink);overflow-wrap:anywhere;user-select:all}
+.btn{font:inherit;font-size:14px;font-weight:500;padding:7px 12px;border-radius:6px;border:1px solid var(--line-2);background:transparent;color:var(--ink);cursor:pointer}
+.contact .links{margin-top:14px}
+footer.fine{padding-block:22px 36px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
 
-/* theme button and social links */
-.th{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;margin-inline:4px;flex:none}
-.th:hover{border-color:var(--ink)}
-.th svg{width:18px;height:18px}
-.soc{display:flex;gap:8px;margin-top:18px}
-.soc a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--white);border:1px solid var(--line);color:var(--ink);transition:transform .15s,background .15s,color .15s}
-.soc a:hover{transform:translateY(-2px);background:var(--ink);color:var(--on-ink)}
-.soc svg,.socl svg{width:18px;height:18px}
-.socl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.socl a{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:12px;border:1px solid #3A434D;color:#FFFFFF;font-size:14.5px;font-weight:500;text-decoration:none}
-.socl a:hover{background:#FFFFFF;color:#0F1419;border-color:#FFFFFF}
-footer.fine .in{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}
-footer.fine nav{display:flex;flex-wrap:wrap;gap:6px 18px}
-footer.fine a{color:var(--muted);text-decoration:none}
-footer.fine a:hover{color:var(--ink);text-decoration:underline}
-.collage .fr,.collage .ph{transition:translate .25s ease-out;will-change:translate}
-
-/* practice, about, contact */
-.prac{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:12px}
-.prac a,.prac span.p{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:14px 16px;background:var(--white);border:1px solid var(--line);border-radius:12px;text-decoration:none;font-weight:500;color:var(--ink)}
-.prac a:hover{border-color:var(--ink)}
-.prac small{font-size:12.5px;color:var(--muted);font-weight:400;text-align:right}
-.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:start}
-.about p{margin:0 0 14px;font-size:16.5px;max-width:58ch}
-.skills{display:grid;gap:12px;margin-top:24px}
-.skills div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;font-size:15px}
-.skills b{color:var(--muted);font-weight:500}
-.chart{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:22px}
-.chart h4{font-size:16px;margin-bottom:4px}
-.chart p{margin:0 0 14px;font-size:14px;color:var(--muted)}
-.chart svg{width:100%;height:auto}
-.contact{background:var(--panel);color:#E9EDF1;border-radius:26px;padding:56px 48px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center}
-.contact h2{color:#FFFFFF;font-size:clamp(30px,4vw,44px);font-weight:800}
-.contact p{margin:12px 0 0;color:#AEB6C0;font-size:17px}
-.mail{display:grid;gap:12px}
-.mail code{font-family:var(--mono);font-size:15px;padding:14px 16px;border-radius:12px;background:var(--panel-2);color:#FFFFFF;user-select:all;overflow-wrap:anywhere}
-.mail .row{display:flex;gap:10px;flex-wrap:wrap}
-.mail .btn{background:#FFFFFF;color:#0F1419;border-color:#FFFFFF}
-.mail .btn.ghost{background:transparent;color:#FFFFFF;border-color:#3A434D}
-footer.fine{padding-block:28px 40px;font-size:13.5px;color:var(--muted)}
-
-@media (max-width:940px){.site nav a[href="#about"]{display:none}}
-@media (max-width:760px){.site nav a:not(.cta){display:none}}
-@media (max-width:900px){
-  .hero .in{grid-template-columns:1fr;gap:36px}
-  .case-body{grid-template-columns:1fr}
-  .about{grid-template-columns:1fr;gap:32px}
-  .contact{grid-template-columns:1fr;padding:40px 28px}
+@media (max-width:980px){
+  .focus{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .site nav a[href="#practice"]{display:none}
+}
+@media (max-width:860px){
+  .hero .in,.c-main,.about,.contact{grid-template-columns:minmax(0,1fr);gap:32px}
+  .decs{grid-template-columns:minmax(0,1fr);gap:22px}
+  .prac{grid-template-columns:minmax(0,1fr)}
+  .site nav a:not(.cta){display:none}
 }
 @media (max-width:640px){
   body{font-size:15.5px}
-  .site .in{height:56px}
-  .site nav a:not(.cta){display:none}
-  .hero{padding-block:36px 28px}
-  .hero h1{font-size:34px}
-  .hero p{font-size:16.5px}
-  .nums{gap:22px}.nums b{font-size:26px}
-  .collage{aspect-ratio:1.05}
-  section{padding-block:56px}
-  .head{margin-bottom:28px}
-  .head p{font-size:16px}
-  .case{border-radius:18px}
-  .case-top{padding:18px;gap:12px}
-  .case-top h3{font-size:22px}
-  .stage{padding:16px}
-  .fr .bar{height:24px}.fr .bar i{width:7px;height:7px}
-  .thumbs button{width:76px}
-  .info{padding:20px 18px 22px;gap:16px}
-  .toggle{display:block}
-  .case:not(.open) .extra,.case:not(.open) .feats{display:none}
-  .feats{padding:16px 18px 20px}
-  .extra{gap:16px}
-  .feat li{font-size:14.5px}
-  .bar2{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+  .site .in{height:54px}
+  .site nav{gap:14px}
+  .hero{padding-block:40px 36px}
+  .hero h1{font-size:30px}
+  .hero p,.side p.ctx{font-size:16px}
+  .hero p.built{margin-top:0;font-size:14.5px}
+  section.blk{padding-block:44px}
+  .head{margin-bottom:24px}
+  .focus{grid-template-columns:minmax(0,1fr);gap:22px}
+  .case{padding-block:40px}
+  .c-main{gap:20px}
+  .side{gap:16px}
+  .thumbs button{width:70px}
+  .toggle{display:block;margin-top:18px}
+  .case:not(.open) .detail{display:none}
+  .detail{margin-top:20px;gap:24px}
+  .flow{display:grid;gap:0}
+  .flow li{display:grid;justify-items:start}
+  .flow li:not(:last-child)::after{width:1px;height:12px;margin-left:16px}
   .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-20px;padding-inline:20px}
-  #q{flex:none;width:100%;max-width:100%}
-  .grid{grid-template-columns:1fr 1fr;gap:12px}
-  .card .bd{padding:12px 12px 14px;gap:4px}
-  .card h3{font-size:15.5px}
+  .filters::-webkit-scrollbar{display:none}
+  #q{flex:1 1 100%}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}
+  .card h3{font-size:15px}
   .card p{font-size:13px}
-  .card .open{display:none}
-  .dl-bd{padding:20px}
-  .dl-bd h3{font-size:23px}
-  .skills div{grid-template-columns:1fr;gap:2px}
-  .contact{padding:32px 22px;border-radius:20px}
-  .th{margin-inline:0}
+  .dl-bd{padding:18px}
+  .skills div{grid-template-columns:minmax(0,1fr);gap:1px}
 }
-@media (max-width:360px){.grid{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.soc a{transition:none}.collage .fr,.collage .ph{transition:none}html{scroll-behavior:auto}.card{transition:none}.card:hover{transform:none}}
+@media (max-width:340px){.grid{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -288,81 +244,85 @@ footer.fine{padding-block:28px 40px;font-size:13.5px;color:var(--muted)}
 <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
 <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol>
 </defs></svg>
+
 <header class="site"><div class="in">
   <a class="who" href="#top"><img id="av" alt="">Youcef Boudjenah</a>
-  <nav><a href="#work">Case studies</a><a href="#projects">All projects</a><a href="#about">About</a><button class="th" id="theme" type="button"><svg aria-hidden="true"><use id="themei" href="#i-moon"></use></svg></button><a class="cta" href="#contact">Contact</a></nav>
+  <nav><a href="#work">Work</a><a href="#practice">Practice</a><a href="#projects">Projects</a><a href="#about">About</a><button class="th" id="theme" type="button"><svg aria-hidden="true"><use id="themei" href="#i-moon"></use></svg></button><a class="cta" href="#contact">Contact</a></nav>
 </div></header>
 
 <main id="top">
 <div class="hero"><div class="in">
   <div>
-    <span class="badge"><i></i>Full-stack developer · Algeria</span>
-    <h1>Software for Algerian businesses, from the <span>shop counter</span> to the head office.</h1>
-    <p>I'm Youcef. I build ERPs, invoicing, stock and booking apps that follow local rules (DGI, CNAS, IRG), work in Arabic and French, and keep running when the internet doesn't.</p>
-    <div class="btns"><a class="btn" href="#work">See case studies</a><a class="btn light" href="#contact">Contact me</a></div>
-    <div class="soc"><a href="https://www.linkedin.com/in/youcef-boudjenah/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg aria-hidden="true"><use href="#i-in"></use></svg></a><a href="https://github.com/youcef-boudjenah" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg aria-hidden="true"><use href="#i-gh"></use></svg></a><a href="https://www.instagram.com/boudjenah.youcef.off/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg aria-hidden="true"><use href="#i-ig"></use></svg></a><a href="https://www.facebook.com/profile.php?id=61589734882758" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg aria-hidden="true"><use href="#i-fb"></use></svg></a></div>
-    <div class="nums"><div><b id="n-proj">0</b>projects built</div><div><b>87</b>GitHub repositories</div><div><b>3</b>platforms</div></div>
+    <div class="role">Full-stack engineer · Algeria</div>
+    <h1>I build the software businesses run on: ledgers, ERPs and offline systems where the numbers have to be right.</h1>
+    <p>Most of my work is transactional software for Algerian companies, where a wrong total becomes a legal problem. I work across the stack, from schema design and concurrency to the screens people use at the counter.</p>
+    <div class="links" id="social1"></div>
   </div>
-  <div class="collage" aria-hidden="true">
-    <div class="fr f1"><div class="bar"><i></i><i></i><i></i><span>GEDA ERP · Home</span></div><img src="img/gedaerp-1.jpg" alt=""></div>
-    <div class="fr f2"><div class="bar"><i></i><i></i><i></i><span>DzBarber · Salons</span></div><img src="img/dzbarber-2.jpg" alt=""></div>
-    <div class="fr f3"><div class="bar"><i></i><i></i><i></i><span>CRS · Merchant dashboard</span></div><img src="img/crs-2.jpg" alt=""></div>
-    <div class="ph"><img src="img/crs-m.jpg" alt=""></div>
-  </div>
+  <table class="spec">
+    <caption>In numbers</caption>
+    <tr><th>Projects</th><td id="n-proj">0</td></tr>
+    <tr><th>Industries</th><td id="n-ind">0</td></tr>
+    <tr><th>GitHub repositories</th><td>87</td></tr>
+    <tr><th>Data models in the largest system</th><td>287</td></tr>
+    <tr><th>Automated tests in the largest system</th><td>674</td></tr>
+  </table>
+  <p class="built"><b>Built for</b> accounting firms, taxi offices, barbershops in 58 wilayas, the Tighart science center in Tamanrasset, Groupe Chiali, Trust Mobility in France and I-SOCIAL in Villeurbanne.</p>
 </div></div>
 
-<div class="built"><div class="in">
-  <h4>Built for</h4>
-  <ul>
-    <li>Accounting firms</li><li>Taxi offices</li><li>Barbershops in 58 wilayas</li><li>Tighart science center, Tamanrasset</li><li>Groupe Chiali, Sidi Bel Abbès</li><li>Trust Mobility, France</li><li>I-SOCIAL, Villeurbanne</li><li>Université Djillali Liabès</li>
-  </ul>
-</div></div>
-
-<section id="work"><div class="in">
-  <div class="head"><div class="kick">Case studies</div><h2>Seven projects, explained</h2><p>For each one: the problem, what I built, and what it looks like. Click the small pictures to change the screen, and the big one to enlarge it.</p></div>
-  <div class="cases" id="cases"></div>
+<section class="blk" id="focus"><div class="in">
+  <div class="head"><h2>What I work on</h2></div>
+  <div class="focus">
+    <div><h3>Transactional integrity</h3><p>Row locks, idempotency keys and ledgers, so retries and concurrent users cannot corrupt a balance.</p><small>CRS, GEDA ERP, DzBarber</small></div>
+    <div><h3>Multi-tenant business systems</h3><p>Domain models for sales, stock, accounting and HR, with data separated by company at the schema level.</p><small>GEDA ERP</small></div>
+    <div><h3>Offline-first software</h3><p>Desktop and PWA software that keeps working without internet and syncs safely when it returns.</p><small>GStock, Fawatir DZ, CRS</small></div>
+    <div><h3>Applied AI</h3><p>Retrieval over real documents, with ontologies, source tracing and honest failure when evidence is missing.</p><small>RAG Assistant, Zynova CNC</small></div>
+  </div>
 </div></section>
 
-<section id="projects" style="padding-top:24px"><div class="in">
-  <div class="head"><div class="kick">All projects</div><h2>Everything else I've built</h2><p>Tap any project to read what it does, who it's for and how it's built.</p></div>
-  <div class="bar2"><div class="filters" id="filters" role="group" aria-label="Filter by industry"></div><input id="q" type="search" placeholder="Search projects" aria-label="Search projects"></div>
+<section class="blk" id="work"><div class="in">
+  <div class="head"><h2>Selected work</h2><p>Seven systems, with the data flow, the decisions behind them and what each decision cost.</p></div>
+  <div id="cases"></div>
+</div></section>
+
+<section class="blk" id="practice"><div class="in">
+  <div class="head"><h2>How I work</h2></div>
+  <div class="prac">
+    <div><h3>Release gates written first</h3><p>GEDA ERP ships in phases, each with pass criteria set before the work starts, such as “no duplicate inventory decrements” and “company isolation tests pass”.</p></div>
+    <div><h3>Tests around the risky paths</h3><p>The 674 tests in GEDA ERP cover areas like tenant isolation and document flows, where a bug means wrong books.</p></div>
+    <div><h3>Security as a deliverable</h3><p>Trust Mobility holds personal driver data, so its repository includes a security report, a checklist, a developer guide and an incident response plan.</p></div>
+    <div><h3>Recovery planned in advance</h3><p>GEDA ERP has a written backup and disaster recovery policy, with targets of 15 minutes of maximum data loss and 2 hours to restore service.</p></div>
+  </div>
+</div></section>
+
+<section class="blk" id="projects"><div class="in">
+  <div class="head"><h2>Other projects</h2></div>
+  <div class="bar2"><div class="filters" id="filters" role="group" aria-label="Filter by industry"></div><input id="q" type="search" placeholder="Search projects or technologies" aria-label="Search projects"></div>
   <div class="grid" id="grid"></div>
-  <button class="btn light showall" id="showall" type="button" hidden></button>
+  <button class="showall" id="showall" type="button" hidden></button>
 </div></section>
 
-<section id="start" style="padding-top:24px"><div class="in">
-  <div class="head"><div class="kick">Where I started</div><h2>Practice projects</h2><p>Small apps I made while learning React, Node, Python and C#. Three are still online.</p></div>
-  <div class="prac" id="prac"></div>
-</div></section>
-
-<section id="about" style="padding-top:24px"><div class="in about">
+<section class="blk" id="about"><div class="in about">
   <div>
-    <div class="head" style="margin-bottom:20px"><div class="kick">About</div><h2>Hi, I'm Youcef</h2></div>
-    <p>I'm a full-stack developer and a Master's student in AI at Université Djillali Liabès in Sidi Bel Abbès.</p>
-    <p>I started with small React and C# desktop projects, then moved on to complete products for clients: accounting firms, taxi offices, a science center in Tamanrasset, a VTC company in France, barbershops and clinics.</p>
-    <p>I like software that people use every day at a counter or an office desk, so I care about speed, offline mode, Arabic and French screens, and documents that print correctly. Away from the screen I ride motorbikes and go to the mountains.</p>
-    <div class="skills">
-      <div><b>Web</b><span>PHP 8, Django, FastAPI, Node, MySQL, PostgreSQL, Tailwind</span></div>
-      <div><b>Apps</b><span>Flutter for desktop and mobile, React Native with Expo</span></div>
-      <div><b>AI and data</b><span>RAG with Qdrant, OWL ontologies, scikit-learn, XGBoost</span></div>
-      <div><b>Shipping</b><span>Docker, Windows installers, Vercel, Firebase, cPanel</span></div>
-    </div>
+    <div class="head" style="margin-bottom:16px"><h2>About</h2></div>
+    <p>I'm a full-stack engineer and a Master's student in AI at Université Djillali Liabès in Sidi Bel Abbès.</p>
+    <p>I started with C# desktop applications and React, then moved to complete products for clients in accounting, transport, education, health and retail.</p>
+    <p>Away from the screen I ride motorbikes and go to the mountains.</p>
   </div>
-  <div class="chart">
-    <h4>New GitHub repositories per month</h4>
-    <p>June 2024 to November 2026. Busiest month: October 2026, with 15.</p>
-    <svg id="chart" viewBox="0 0 360 160" role="img" aria-label="Bar chart of repositories created per month"></svg>
-  </div>
+  <dl class="skills">
+    <div><dt>Backend</dt><dd>PHP 8, Python, Django, FastAPI, Node</dd></div>
+    <div><dt>Data</dt><dd>MySQL, PostgreSQL, SQLite, Redis, Qdrant</dd></div>
+    <div><dt>Clients</dt><dd>Flutter desktop and mobile, React, React Native</dd></div>
+    <div><dt>AI</dt><dd>RAG, knowledge graphs, OWL, scikit-learn, XGBoost</dd></div>
+    <div><dt>Delivery</dt><dd>Docker, Celery, Windows installers, Firebase, Vercel</dd></div>
+  </dl>
 </div></section>
 
-<section id="contact" style="padding-top:24px"><div class="in">
-  <div class="contact">
-    <div><h2>Have a project in mind?</h2><p>I take on client projects and freelance work: business software, mobile apps and AI tools. Tell me what you need.</p></div>
-    <div class="mail"><code id="mail">boudjenahyoucef22@gmail.com</code><div class="row"><button class="btn" id="copy" type="button">Copy email</button></div><div class="socl"><a href="https://www.linkedin.com/in/youcef-boudjenah/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-in"></use></svg>LinkedIn</a><a href="https://github.com/youcef-boudjenah" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-gh"></use></svg>GitHub</a><a href="https://www.instagram.com/boudjenah.youcef.off/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"></use></svg>Instagram</a><a href="https://www.facebook.com/profile.php?id=61589734882758" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-fb"></use></svg>Facebook</a></div></div>
-  </div>
+<section class="blk" id="contact"><div class="in contact">
+  <div><h2>Get in touch</h2><p>For client projects and engineering work on business software.</p></div>
+  <div><div class="mail"><code id="mail">boudjenahyoucef22@gmail.com</code><button class="btn" id="copy" type="button">Copy</button></div><div class="links" id="social2"></div></div>
 </div></section>
 </main>
-<footer class="fine"><div class="in"><span>Youcef Boudjenah · Algeria · 2026</span><nav aria-label="Social links"><a href="https://www.linkedin.com/in/youcef-boudjenah/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/youcef-boudjenah" target="_blank" rel="noopener">GitHub</a><a href="https://www.instagram.com/boudjenah.youcef.off/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/profile.php?id=61589734882758" target="_blank" rel="noopener">Facebook</a></nav></div></footer>
+<footer class="fine"><div class="in">Youcef Boudjenah · Algeria · 2026</div></footer>
 
 <dialog id="dlg" aria-labelledby="dl-title"><button class="x" id="dlx" type="button" aria-label="Close">×</button><div id="dlc"></div></dialog>
 
@@ -472,91 +432,164 @@ const P=[
  ["mefti","Mefti Auto-Importation","web","2026-10-19","PHP, GSAP","Website for an import broker: sourcing, sea freight and customs.","Importers","Mefti_autoimportation"],
  ["reelman","REELMONTAGMAN","tool","2026-09-23","Remotion, React","Short-video maker with animated Arabic and Darija text.","Content creators","REELMONTAGMAN"]
 ].map(a=>({id:a[0],n:a[1],ind:a[2],d:a[3],s:a[4],t:a[5],u:a[6],gh:a[7]||"",pub:!!a[8]}));
-
+const SOCIAL=[["LinkedIn","https://www.linkedin.com/in/youcef-boudjenah/","i-in"],["GitHub","https://github.com/youcef-boudjenah","i-gh"],["Instagram","https://www.instagram.com/boudjenah.youcef.off/","i-ig"],["Facebook","https://www.facebook.com/profile.php?id=61589734882758","i-fb"]];
 const CASES=[
- {id:"gedaerp",b:"#1E4FB8",one:"ERP for Algerian companies",tags:["Web app","French and Arabic","2026"],
-  prob:"Small and mid-size companies run sales in one tool, stock in Excel and accounting somewhere else, so the numbers never match.",
-  sol:"One web platform where every module shares the same data. A sale updates stock, the invoice feeds treasury, and every action is logged.",
-  feat:["Sales: quotes, orders, invoices and customer accounts","Stock: items, warehouses and low-stock alerts","Purchasing, treasury and HR in the same database","Reports and an approval queue for managers","Several companies and branches in one install, data kept apart"],
-  users:"Managers, sales staff, storekeepers, accountants",stack:["Django","MySQL","Redis","Celery","HTMX","Tailwind","Docker"],
-  shots:[["gedaerp-1","Home dashboard"],["gedaerp-2","Sales dashboard"],["gedaerp-3","Stock dashboard"],["gedaerp-4","Invoice detail"]]},
- {id:"crs",b:"#6B2BD6",one:"A loyalty network for neighborhood shops",tags:["Web app + PWA","Algeria","2026"],
-  prob:"Small shops can't run a loyalty program like big chains, and customers' points stay locked in each shop.",
-  sol:"One shared points network. Customers earn points at any partner shop and spend them as a discount at checkout, up to half of the bill.",
-  feat:["The merchant scans the customer's QR card to add points","Points pay up to 50% of a bill, confirmed by a one-time code","Prepaid recharge cards for merchants","Every point movement goes into a ledger, so points can't be spent twice","Admin panel to reconcile every point movement"],
-  users:"Shoppers, shop owners, network admins",stack:["PHP 8.3","MySQL","Tailwind","PWA","Leaflet maps"],
-  shots:[["crs-1","Home page"],["crs-2","Merchant dashboard"],["crs-3","QR card scanner"],["crs-4","Admin dashboard"]]},
- {id:"dzbarber",b:"#C77700",one:"Queue tickets and booking for barbershops",tags:["Web app + Android","Arabic and French","2026"],
-  prob:"Customers wait for hours in barbershops without knowing when their turn will come.",
-  sol:"A live queue on the phone. The customer takes a ticket, sees how many people are ahead and the estimated wait, and gets an alert when it's their turn.",
-  feat:["Directory of salons in all 58 wilayas, with verified badges","Live ticket with waiting time","Barber console to call, serve or skip clients","Price guide with a cost and time calculator","Light and dark mode, Android app"],
-  users:"Customers, barbers, platform admins",stack:["PHP","MySQL","Tailwind","PWA","Android"],
-  shots:[["dzbarber-1","Home page"],["dzbarber-2","Salon directory"],["dzbarber-3","Customer queue ticket"],["dzbarber-4","Barber console"]]},
- {id:"gstock",b:"#2563EB",one:"Stock and point of sale that works offline",tags:["Windows desktop","Installer","2026"],
-  prob:"Many shops have unstable internet but still need fast checkout, stock tracking and proper invoices.",
-  sol:"A desktop app that runs on the shop's own PC with no internet. The client installs it from one setup file and activates it with a license key.",
-  feat:["Checkout with three price levels, products sold by weight or by meter","Stock entries and exits with low-stock alerts","Invoices, proformas and delivery notes printed as PDF","Returns, expenses, workers and sales statistics","French and Arabic, local backup"],
-  users:"Shop owners and cashiers",stack:["Flutter","Riverpod","Drift","SQLite","Inno Setup"],
+ {id:"gedaerp",one:"Multi-tenant ERP covering the commercial and accounting cycle.",
+  ctx:"Algerian companies need one system for sales, stock, purchasing, treasury, HR and production, with accounting that follows the SCF. I designed the domain model and built each area as a separate Django app.",
+  nums:[["21","Django apps"],["287","data models"],["674","automated tests"],["125k","lines of Python"]],
+  stack:"Django · MySQL · Redis · Celery · HTMX · Docker",
+  flowLabel:"Commercial cycle",flow:["Quotation","Sales order","Reservation","Picking","Delivery note","Invoice","Payment"],
+  dec:[["Tenant scoping in the base model","Every business record inherits OrganizationScopedModel, so organization and branch are part of the schema and don't depend on each query remembering them.","Every query and test fixture has to carry an organization."],
+       ["Idempotent posting between modules","Events between modules carry a unique idempotency key, so a retried posting cannot create a second stock or accounting movement.","Each event is stored with a status that has to be tracked."],
+       ["Document lineage before cancellation","DocumentLink traces order, delivery, invoice and payment, so the downstream effects are visible before anything is cancelled.","Every document in the chain writes extra link records."]],
+  shots:[["gedaerp-1","Home dashboard"],["gedaerp-2","Sales dashboard"],["gedaerp-3","Stock dashboard"],["gedaerp-4","Invoice detail"]],
+  excerpt:{cap:"apps/core/models.py (trimmed)",code:String.raw`class OrganizationScopedModel(TimeStampedModel):
+    """Abstract model enforcing multi-tenant organization scoping."""
+    organization = models.ForeignKey(
+        "organizations.Organization",
+        on_delete=models.CASCADE,
+        related_name="%(app_label)s_%(class)s_set",
+        db_index=True,
+    )
+    branch = models.ForeignKey(
+        "organizations.Branch",
+        on_delete=models.SET_NULL,
+        null=True,
+    )`}},
+ {id:"crs",one:"Loyalty points ledger shared across independent shops.",
+  ctx:"Households earn points at neighbourhood shops and spend them at checkout, up to half of a bill. Points have a cash value, so balances must stay correct through retries, double clicks and lost connections.",
+  nums:[["20","database tables"],["50%","maximum redemption"],["95","commits"],["PWA","with offline queue"]],
+  stack:"PHP 8.3 · MySQL (InnoDB) · IndexedDB · Service Worker · Leaflet",
+  flowLabel:"Collecting points",flow:["QR scan","Idempotency check","Lock merchant, customer, wallets","Write transaction","Ledger entry with balances","Commit"],
+  dec:[["A ledger behind every balance","point_ledger records direction, points and the balance before and after, so any wallet can be audited movement by movement.","Each movement costs extra writes inside the transaction."],
+       ["Row locks on every money path","Merchant, customer and wallet rows are locked with SELECT ... FOR UPDATE in one transaction, so two cashiers cannot spend the same points.","Concurrent requests on one wallet wait for each other."],
+       ["An offline queue that is safe to replay","The merchant's device queues scans in IndexedDB. Each carries an idempotency key, and the server answers accepted, duplicate or rejected per item.","A scan made offline can still be rejected at sync time."]],
+  shots:[["crs-1","Home page"],["crs-2","Merchant dashboard"],["crs-3","QR card scanner"],["crs-4","Admin dashboard"]],
+  excerpt:{cap:"database/crs_complete.sql (trimmed)",code:String.raw`CREATE TABLE point_ledger (
+  id             BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  wallet_id      BIGINT UNSIGNED NOT NULL,
+  transaction_id BIGINT UNSIGNED NULL,
+  direction      ENUM('CREDIT', 'DEBIT') NOT NULL,
+  points         INT NOT NULL,
+  balance_before INT NOT NULL,
+  balance_after  INT NOT NULL,
+  reason         VARCHAR(100) NOT NULL,
+  created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;`}},
+ {id:"rag",one:"Question answering over legal documents, with sources.",
+  ctx:"Institutions need answers from laws, decrees and guides, and they need to see where each answer comes from. A confident answer from an outdated text is worse than no answer.",
+  nums:[["22","backend services"],["74","automated tests"],["3","retrieval signals"],["4","LLM providers"]],
+  stack:"FastAPI · Next.js · PostgreSQL · Qdrant · Docker",
+  flowLabel:"Query path",flow:["Extract PDF, CSV, Excel","Chunk","Embed","Index in Qdrant","Vector + lexical + graph","Rank fusion","Answer with sources"],
+  dec:[["Three retrieval signals","Vector search misses exact legal references, so lexical and knowledge-graph results are fused with it using Reciprocal Rank Fusion.","Fetching three times top-k per signal adds latency."],
+       ["An ontology of legal authority","An OWL ontology models the hierarchy of Loi, Décret, Arrêté, Guide and Avis, which ranks sources and detects conflicts between them.","The ontology has to be maintained as the domain changes."],
+       ["Graph retrieval can fail safely","If the knowledge graph is unavailable, search continues on the other two signals so the assistant stays up.","Answers lose graph context during that outage."]],
+  media:{cap:"backend/app/services/retrieval_service.py (trimmed)",code:String.raw`def hybrid_search(self, query, top_k=5, *, use_graph=True, graph_hops=2):
+    """Graph-RAG: semantic vectors + lexical overlap +
+    knowledge-graph facts, fused with RRF."""
+    fetch_k = max(top_k * 3, 10)
+    semantic_results = self.semantic_search(query, top_k=fetch_k)
+    lexical_results = self._lexical_search(query, top_k=fetch_k)
+    graph_results = []
+    if use_graph:
+        try:
+            graph_results = KnowledgeGraphService().retrieve(
+                query, limit=fetch_k, hops=graph_hops
+            )
+        except Exception as exc:
+            logger.debug("Graph retrieval skipped: %s", exc)`}},
+ {id:"gstock",one:"Offline point of sale and stock for Windows.",
+  ctx:"Many shops have unstable internet but still need fast checkout and valid invoices. I rewrote an earlier PHP version as a desktop application that runs entirely on the shop's PC, with no backend.",
+  nums:[["23","SQLite tables"],["0","servers required"],["39k","lines of Dart"],["1","setup file to install"]],
+  stack:"Flutter · Riverpod · Drift · SQLite · Inno Setup",
+  flowLabel:"Architecture",flow:["Flutter desktop UI","Riverpod state","Drift typed queries","Local SQLite","PDF documents and backup"],
+  dec:[["No server at all","All data stays in a local SQLite file, which removes hosting costs and every sync failure mode.","Data lives on one PC, so backups depend on the shop."],
+       ["Typed SQL with Drift","Schema and queries across 23 tables are checked at compile time and not discovered at the counter.","Adds a code generation step to the build."],
+       ["License keys bound to the machine","Keys are signed with HMAC-SHA256 and tied to a machine fingerprint, so activation works with no internet.","Changing the hardware requires a new key."]],
   shots:[["gstock-1","Dashboard"]]},
- {id:"fawatir",b:"#0F8A6A",one:"Invoicing that follows Algerian tax rules",tags:["Windows + Android","French and Arabic","2026"],
-  prob:"Small businesses write invoices in Word or Excel and forget required fields like NIF, RC or the stamp duty.",
-  sol:"An invoicing app that fills every legal field from the company profile and does the tax maths automatically.",
-  feat:["Seven document types: invoice, proforma, delivery note, quote and more","VAT at 19%, 9% or 0%","Stamp duty calculated automatically for cash payments","Total written in words in French and Arabic","Windows installer and Android app"],
-  users:"Small and mid-size businesses",stack:["Flutter","SQLite","Inno Setup"],
-  shots:[["fawatir-1","Product page"]]},
- {id:"chiffrage",b:"#D23B2E",one:"Price estimation for construction projects",tags:["Web SaaS","Construction","2026"],
-  prob:"Quantity surveyors still price projects in huge Excel files that are hard to update and easy to break.",
-  sol:"A web app that builds a price step by step: resources, then unit breakdowns, then dry cost, then selling price, then the final bill of quantities.",
-  feat:["Catalogue of materials, labour, machines and subcontracting in DZD","Unit price breakdowns reused across projects","Sale coefficients applied automatically","BPU and DQE documents exported to Excel"],
-  users:"Construction companies and design offices",stack:["PHP 8.2","MySQL","Tailwind","PhpSpreadsheet"],
-  shots:[["chiffrage-1","Home page"]]},
- {id:"taxi",b:"#B58A00",one:"Management platform for taxi offices",tags:["Web app","Arabic","Public code"],
-  prob:"Taxi offices track licences, insurance and inspection dates on paper and miss renewals.",
-  sol:"A platform that stores every vehicle and driver document and warns the office before anything expires.",
-  feat:["Vehicle file: technical inspection, insurance, GPL certificate, extinguisher, meter","Driver and owner files with licences and medical certificates","Work contracts generated under law 90-11 and signed online","Full Arabic interface"],
-  users:"Taxi office managers",stack:["PHP","MySQL","Tailwind"],link:GH+"taxi-naguilou",
-  shots:[["taxi-1","Home page"]]}
+ {id:"trust",one:"Driver operations platform for a VTC company in France.",
+  ctx:"Drivers handle payslips, contracts, expense claims and identity documents here, so the system stores personal data and has to be defended accordingly. It runs as a web app and as native iOS and Android apps.",
+  nums:[["3","clients: web, iOS, Android"],["1","server with the rules"],["12","minimum password length"],["6","failed logins before a block"]],
+  stack:"PHP 8 · MySQL · PWA · Expo · React Native",
+  flowLabel:"Architecture",flow:["PWA or native app","/api/v1 JSON","Business rules on the server","MySQL and document storage"],
+  dec:[["One server, several clients","Every web screen is also available as JSON, and business rules stay in one place on the server.","The API must stay compatible with apps already installed."],
+       ["Hardened sessions","Strict session mode, ID regeneration at login, an HMAC fingerprint tied to the User-Agent, and an idle timeout.","A changed User-Agent ends the session."],
+       ["Security written down","A security report, checklist, developer guide and incident plan live in the repository with the code.","The documents have to be kept current."]],
+  shots:[["trust-1","Sign-in"]]},
+ {id:"dzbarber",one:"Live queue tickets for barbershops in 58 wilayas.",
+  ctx:"Customers wait for hours with no idea when their turn comes. Tickets are taken from phones at the same moment, so numbers and positions must never collide.",
+  nums:[["58","wilayas covered"],["3 s","queue refresh"],["79","commits"],["3","roles: client, barber, admin"]],
+  stack:"PHP · MySQL · Tailwind · PWA · Android",
+  flowLabel:"Taking a ticket",flow:["Customer taps","Lock today's tickets","Next number and position","Insert ticket","Clients refresh every 3 s","Barber calls next"],
+  dec:[["Locks for ticket numbers","The next number and position are read with FOR UPDATE inside a transaction, so two customers cannot get the same ticket.","Ticket creation is serialized per salon."],
+       ["Polling over WebSockets","Clients refresh every 3 seconds. It runs on standard PHP hosting with no long-running process to manage.","Up to 3 seconds of delay and a steady stream of small requests."],
+       ["No third-party CDNs","All assets are served locally, so pages keep working on poor connections and no outside service can break them.","Library updates are done by hand."]],
+  shots:[["dzbarber-1","Home page"],["dzbarber-2","Salon directory"],["dzbarber-3","Customer queue ticket"],["dzbarber-4","Barber console"]]},
+ {id:"motorsense",one:"Android app that maps underground voids from a resistivity rover.",
+  ctx:"A rover with a Wenner electrode array streams position and resistance over Bluetooth. The app converts the stream to apparent resistivity, interpolates a grid and draws a live 3D map of the ground.",
+  nums:[["2πaR","apparent resistivity"],["2.5×","anomaly threshold"],["IDW","grid interpolation"],["HC-05","Classic Bluetooth"]],
+  stack:"Flutter · Bluetooth serial · Plotly",link:"https://github.com/youcef-boudjenah/Motorsense",
+  flowLabel:"Signal path",flow:["HC-05 stream","Parse X, Y, R","ρa = 2πaR","IDW grid","Anomaly check","Live 3D map"],
+  dec:[["A simulation mode","Classic Bluetooth only works on real hardware, so a simulator feeds the same pipeline during development.","The simulator has to stay close to real sensor behaviour."],
+       ["A background-relative threshold","A point is flagged above 2.5 times the running average, which adapts to the soil of each site.","The first points cannot be flagged, and slow drift raises the baseline."],
+       ["Plotly in a WebView","The 3D surface reuses Plotly and avoids a native 3D engine.","The WebView bridge adds rendering overhead."]],
+  media:{cap:"lib/services/anomaly_detector.dart",code:String.raw`/// Running-average void detector:
+/// anomaly if rho > multiplier x background avg.
+bool evaluate(double rho) {
+  if (_count < 3) {
+    _sum += rho;
+    _count++;
+    return false;
+  }
+  final avg = _sum / _count;
+  final isAnomaly = rho > multiplier * avg;
+  _sum += rho;
+  _count++;
+  return isAnomaly;
+}`}}
 ];
-
-const PRAC=[["Weather app","React · online","https://wareact.netlify.app/"],["Profile card","React · online","https://boudjennah-youcef-card.netlify.app/"],["Todo app","React · online","https://todo-react-v11.netlify.app/"],["Contact form","React",GH+"contactForm"],["Scientific calculator","React",GH+"calculator-scientific"],["Joke API","Node and Express",GH+"Joke-API-"],["Python course","Exercises",GH+"python-cours"],["JavaScript style guide","Written in Arabic",GH+"-Idiomatic-JavaScript-"],["BookBangment","C# desktop",GH+"phonemangment"],["C# OOP","Console app",GH+"c-oop"],["BIStocK Pro","C# stock app",""],["GestionAT","C# WinForms",""]];
 
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const ini=n=>n.replace(/[^A-Za-z0-9 ]/g,"").split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase();
 const byId=Object.fromEntries(P.map(p=>[p.id,p]));
 const fmt=d=>new Date(d+"T00:00:00").toLocaleDateString("en-GB",{month:"long",year:"numeric"});
-const stageFrame=(src,label)=>frame(src,label).replace('class="fr"',`class="fr zoomable" tabindex="0" role="button" aria-label="Enlarge ${esc(label)}" data-src="${src}" data-label="${esc(label)}"`);
 const frame=(src,label)=>`<div class="fr"><div class="bar"><i></i><i></i><i></i><span>${esc(label)}</span></div><img src="${src}" alt="${esc(label)}" loading="lazy"></div>`;
+const stageFrame=(src,label)=>frame(src,label).replace('class="fr"',`class="fr zoomable" tabindex="0" role="button" aria-label="Enlarge ${esc(label)}" data-src="${src}" data-label="${esc(label)}"`);
+const codeBlock=x=>`<div class="code"><div class="cap">${esc(x.cap)}</div><pre><code>${esc(x.code)}</code></pre></div>`;
 
 if(LOGOS.avatar)$("av").src=LOGOS.avatar;
 $("n-proj").textContent=P.length;
+$("n-ind").textContent=Object.keys(IND).length;
+const soc=SOCIAL.map(([n,u,i])=>`<a href="${u}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#${i}"></use></svg>${n}</a>`).join("");
+$("social1").innerHTML=soc;$("social2").innerHTML=soc;
 
-/* case studies */
 $("cases").innerHTML=CASES.map((c,ci)=>{
   const p=byId[c.id];
-  const lg=LOGOS[c.id]?`<img src="${LOGOS[c.id]}" alt="">`:"";
-  const thumbs=c.shots.length>1?`<div class="thumbs" role="group" aria-label="${esc(p.n)} screens">${c.shots.map((s,i)=>`<button type="button" data-c="${ci}" data-i="${i}" aria-current="${i===0}" aria-label="Show ${esc(s[1])}"><img src="img/${s[0]}.jpg" alt="" loading="lazy"></button>`).join("")}</div>`:"";
-  const link=c.link?`<a class="more-link" href="${c.link}" target="_blank" rel="noopener">View the code on GitHub</a>`:`<span class="private">The code is in a private repository.</span>`;
-  return `<article class="case" style="--b:${c.b}">
-    <div class="case-top"><div class="lg">${lg}</div><div class="tt"><h3>${esc(p.n)}</h3><div class="one">${esc(c.one)}</div></div><div class="tags">${c.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div></div>
-    <div class="case-body">
-      <div class="stage"><div id="st-${ci}">${stageFrame(`img/${c.shots[0][0]}.jpg`,`${p.n} · ${c.shots[0][1]}`)}</div>${thumbs}</div>
-      <div class="info">
-        <div><h4>The problem</h4><p>${esc(c.prob)}</p></div>
-        <div><h4>What I built</h4><p>${esc(c.sol)}</p></div>
-        <button class="toggle" type="button" aria-expanded="false" data-t="${ci}">Show features and tech</button>
-        <div class="extra">
-        <div><h4>Used by</h4><p>${esc(c.users)}</p></div>
-        <div><h4>Built with</h4><div class="chips">${c.stack.map(s=>`<span>${esc(s)}</span>`).join("")}</div></div>
-        <div>${link}</div>
-        </div>
-      </div>
-    </div>
-    <div class="feats"><h4>Main features</h4><ul class="feat">${c.feat.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></div></article>`;
+  const lg=LOGOS[c.id]?`<img src="${LOGOS[c.id]}" alt="">`:`<span>${ini(p.n)}</span>`;
+  let media;
+  if(c.shots){
+    const th=c.shots.length>1?`<div class="thumbs" role="group" aria-label="${esc(p.n)} screens">${c.shots.map((s,i)=>`<button type="button" data-c="${ci}" data-i="${i}" aria-current="${i===0}" aria-label="Show ${esc(s[1])}"><img src="img/${s[0]}.jpg" alt="" loading="lazy"></button>`).join("")}</div>`:"";
+    media=`<div id="st-${ci}">${stageFrame(`img/${c.shots[0][0]}.jpg`,`${p.n} · ${c.shots[0][1]}`)}</div>${th}`;
+  }else media=codeBlock(c.media);
+  const src=c.link?`<p class="src"><a href="${c.link}" target="_blank" rel="noopener">Source on GitHub</a></p>`:"";
+  return `<article class="case">
+    <div class="c-head"><div class="c-logo">${lg}</div><div><h3>${esc(p.n)}</h3><p>${esc(c.one)}</p></div></div>
+    <div class="c-main"><div style="min-width:0">${media}</div>
+      <div class="side"><p class="ctx">${esc(c.ctx)}</p>
+        <div class="nums">${c.nums.map(([a,b])=>`<div><b>${esc(a)}</b><span>${esc(b)}</span></div>`).join("")}</div>
+        <div class="stack">${esc(c.stack)}</div>${src}
+      </div></div>
+    <button class="toggle" type="button" aria-expanded="false">Show architecture and decisions</button>
+    <div class="detail">
+      <div><div class="lab">${esc(c.flowLabel)}</div><ol class="flow">${c.flow.map(f=>`<li><span>${esc(f)}</span></li>`).join("")}</ol></div>
+      <div><div class="lab">Decisions and trade-offs</div><div class="decs">${c.dec.map(([t,w,x])=>`<div><h4>${esc(t)}</h4><p>${esc(w)}</p><p class="t"><b>Trade-off:</b> ${esc(x)}</p></div>`).join("")}</div></div>
+      ${c.excerpt?`<details class="ex"><summary>View code excerpt</summary>${codeBlock(c.excerpt)}</details>`:""}
+    </div></article>`;
 }).join("");
 $("cases").addEventListener("click",e=>{
   const tg=e.target.closest(".toggle");
-  if(tg){const art=tg.closest(".case"),on=art.classList.toggle("open");tg.setAttribute("aria-expanded",String(on));tg.textContent=on?"Hide details":"Show features and tech";return;}
+  if(tg){const a=tg.closest(".case"),on=a.classList.toggle("open");tg.setAttribute("aria-expanded",String(on));tg.textContent=on?"Hide details":"Show architecture and decisions";return;}
   const z=e.target.closest(".zoomable");
   if(z){openZoom(z.dataset.src,z.dataset.label);return;}
   const b=e.target.closest(".thumbs button");if(!b)return;
@@ -564,8 +597,8 @@ $("cases").addEventListener("click",e=>{
   $("st-"+b.dataset.c).innerHTML=stageFrame(`img/${s[0]}.jpg`,`${p.n} · ${s[1]}`);
   b.parentElement.querySelectorAll("button").forEach(x=>x.setAttribute("aria-current",String(x===b)));
 });
+$("cases").addEventListener("keydown",e=>{const z=e.target.closest&&e.target.closest(".zoomable");if(z&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openZoom(z.dataset.src,z.dataset.label);}});
 
-/* project grid */
 const featured=new Set(CASES.map(c=>c.id));
 const REST=P.filter(p=>!featured.has(p.id));
 let active="all",expanded=false;const LIMIT=12;
@@ -586,49 +619,25 @@ function grid(){
   const cut=!expanded&&active==="all"&&!t&&L.length>LIMIT;
   $("showall").hidden=!cut;if(cut)$("showall").textContent=`Show all ${L.length} projects`;
   if(!L.length){$("grid").innerHTML=`<div class="empty">No project matches “${esc(t)}”.</div>`;return;}
-  $("grid").innerHTML=(cut?L.slice(0,LIMIT):L).map(p=>`<button class="card" type="button" data-id="${p.id}" aria-label="Open ${esc(p.n)}">
-    <div class="pic">${pic(p,false)}</div>
-    <div class="bd"><span class="ind">${IND[p.ind]}</span><h3>${esc(p.n)}</h3><p>${esc(p.t)}</p><span class="open">Read more</span></div></button>`).join("");
+  $("grid").innerHTML=(cut?L.slice(0,LIMIT):L).map(p=>`<button class="card" type="button" data-id="${p.id}" aria-label="Open ${esc(p.n)}"><div class="pic">${pic(p,false)}</div><div class="bd"><h3>${esc(p.n)}</h3><p>${esc(p.t)}</p></div></button>`).join("");
 }
 $("q").addEventListener("input",grid);
 $("showall").addEventListener("click",()=>{expanded=true;grid();});
 $("grid").addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openP(c.dataset.id);});
 filters();grid();
 
-/* detail panel */
 const dlg=$("dlg");
 function showDlg(){try{dlg.showModal();}catch(e){dlg.setAttribute("open","");}}
 function openZoom(src,label){dlg.classList.add("wide");$("dlc").innerHTML=`<div class="zoomcap" id="dl-title">${esc(label)}</div><div class="zoom"><img src="${src}" alt="${esc(label)}"></div>`;showDlg();}
-$("cases").addEventListener("keydown",e=>{const z=e.target.closest&&e.target.closest(".zoomable");if(z&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openZoom(z.dataset.src,z.dataset.label);}});
 function openP(id){
   const p=byId[id];
-  const code=p.pub?`<a class="btn" href="${GH+p.gh}" target="_blank" rel="noopener">View the code on GitHub</a>`:`<span class="private">${p.gh?"The code is in a private repository.":"This project is not on GitHub."}</span>`;
-  $("dlc").innerHTML=`<div class="dl-pic">${pic(p,true)}</div>
-   <div class="dl-bd"><span class="kick" style="margin:0">${IND[p.ind]}</span><h3 id="dl-title">${esc(p.n)}</h3><p style="margin:0;font-size:17px">${esc(p.t)}</p>
-   <dl class="dl-meta"><dt>Used by</dt><dd>${esc(p.u)}</dd><dt>Built with</dt><dd>${esc(p.s)}</dd><dt>Last update</dt><dd>${fmt(p.d)}</dd></dl><div>${code}</div></div>`;
+  const code=p.pub?`<a class="btn" style="text-decoration:none;justify-self:start" href="${GH+p.gh}" target="_blank" rel="noopener">Source on GitHub</a>`:"";
+  $("dlc").innerHTML=`<div class="dl-pic">${pic(p,true)}</div><div class="dl-bd"><h3 id="dl-title">${esc(p.n)}</h3><p style="font-size:16.5px">${esc(p.t)}</p><dl class="dl-meta"><dt>Industry</dt><dd>${IND[p.ind]}</dd><dt>Used by</dt><dd>${esc(p.u)}</dd><dt>Built with</dt><dd>${esc(p.s)}</dd><dt>Last update</dt><dd>${fmt(p.d)}</dd></dl>${code}</div>`;
   dlg.classList.remove("wide");showDlg();
 }
 $("dlx").addEventListener("click",()=>dlg.close());
 dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close();});
 
-/* practice */
-$("prac").innerHTML=PRAC.map(([n,s,u])=>u?`<a href="${u}" target="_blank" rel="noopener">${esc(n)}<small>${esc(s)}</small></a>`:`<span class="p">${esc(n)}<small>${esc(s)}</small></span>`).join("");
-
-/* chart */
-(function(){
-  const C={"2024-06":1,"2024-09":3,"2024-10":1,"2024-11":3,"2024-12":3,"2025-01":1,"2025-03":2,"2025-05":1,"2025-06":1,"2025-07":1,"2025-08":5,"2025-10":3,"2025-11":3,"2025-12":5,"2026-01":2,"2026-04":6,"2026-05":4,"2026-06":5,"2026-07":2,"2026-08":9,"2026-09":10,"2026-10":15,"2026-11":1};
-  const M=[];let y=2024,m=6;while(y<2026||(y===2026&&m<=11)){M.push(`${y}-${String(m).padStart(2,"0")}`);m++;if(m>12){m=1;y++;}}
-  const W=360,H=160,top=12,bot=24,max=15,bw=W/M.length,sy=v=>(H-bot)-(v/max)*(H-bot-top);
-  let s="";
-  [5,10,15].forEach(v=>{s+=`<line x1="0" x2="${W}" y1="${sy(v)}" y2="${sy(v)}" stroke="var(--c-grid)"/><text x="0" y="${sy(v)-4}" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">${v}</text>`;});
-  M.forEach((k,i)=>{const v=C[k]||0,x=i*bw+2,h=(H-bot)-sy(v);
-    s+=`<rect x="${x}" y="${v?sy(v):H-bot-1.5}" width="${bw-4}" height="${v?h:1.5}" rx="2" fill="${k==="2026-10"?"var(--accent)":v?"var(--c-bar)":"var(--c-none)"}"><title>${k}: ${v}</title></rect>`;
-    if(k.endsWith("-01")||i===0)s+=`<text x="${x}" y="${H-7}" font-size="10" fill="var(--muted)" font-family="IBM Plex Mono, monospace">${k.slice(0,4)}</text>`;});
-  s+=`<line x1="0" x2="${W}" y1="${H-bot}" y2="${H-bot}" stroke="var(--c-axis)"/>`;
-  $("chart").innerHTML=s;
-})();
-
-/* theme toggle */
 (function(){
   const root=document.documentElement,mq=matchMedia("(prefers-color-scheme: dark)");
   const isDark=()=>{const a=root.getAttribute("data-theme");return a?a==="dark":mq.matches;};
@@ -639,22 +648,10 @@ $("prac").innerHTML=PRAC.map(([n,s,u])=>u?`<a href="${u}" target="_blank" rel="n
   sync();
 })();
 
-/* hero screens drift with the pointer */
-(function(){
-  if(!matchMedia("(hover:hover) and (prefers-reduced-motion:no-preference)").matches)return;
-  const box=document.querySelector(".collage");
-  const items=[[".f1",-8],[".f2",10],[".f3",16],[".ph",26]].map(([s,d])=>[box.querySelector(s),d]);
-  document.querySelector(".hero").addEventListener("pointermove",e=>{
-    const r=box.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)/r.width,y=(e.clientY-r.top-r.height/2)/r.height;
-    items.forEach(([el,d])=>{el.style.translate=`${(x*d).toFixed(1)}px ${(y*d).toFixed(1)}px`;});
-  });
-  document.querySelector(".hero").addEventListener("pointerleave",()=>items.forEach(([el])=>{el.style.translate="";}));
-})();
-
 $("copy").addEventListener("click",()=>{
   const b=$("copy"),t=$("mail").textContent;
-  const sel=()=>{const r=document.createRange();r.selectNodeContents($("mail"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected. Press Ctrl+C";};
-  try{navigator.clipboard.writeText(t).then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy email",1600);},sel);}catch(e){sel();}
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("mail"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Press Ctrl+C";};
+  try{navigator.clipboard.writeText(t).then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1600);},sel);}catch(e){sel();}
 });
 </script>
 
