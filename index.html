@@ -549,7 +549,8 @@ const CASES=[
   dec:[["Three retrieval signals","Vector search misses exact legal references, so lexical and knowledge-graph results are fused with it using Reciprocal Rank Fusion.","Fetching three times top-k per signal adds latency."],
        ["An ontology of legal authority","An OWL ontology models the hierarchy of Loi, Décret, Arrêté, Guide and Avis, which ranks sources and detects conflicts between them.","The ontology has to be maintained as the domain changes."],
        ["Graph retrieval can fail safely","If the knowledge graph is unavailable, search continues on the other two signals so the assistant stays up.","Answers lose graph context during that outage."]],
-  media:{cap:"backend/app/services/retrieval_service.py (trimmed)",code:String.raw`def hybrid_search(self, query, top_k=5, *, use_graph=True, graph_hops=2):
+  shots:[["rag-1","Knowledge graph"],["rag-2","Ontology and reasoning"],["rag-3","Pipeline traces"]],
+  excerpt:{cap:"backend/app/services/retrieval_service.py (trimmed)",code:String.raw`def hybrid_search(self, query, top_k=5, *, use_graph=True, graph_hops=2):
     """Graph-RAG: semantic vectors + lexical overlap +
     knowledge-graph facts, fused with RRF."""
     fetch_k = max(top_k * 3, 10)
