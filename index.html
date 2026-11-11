@@ -190,6 +190,10 @@ footer.fine{padding-bottom:110px}
 .logo-big.cover img.deco{width:46%}
 .cover img.deco{position:absolute;right:-9%;bottom:-20%;width:64%;opacity:.14;z-index:-1;transform:rotate(-10deg)}
 .logo-big.cover{border-radius:6px}
+.art{aspect-ratio:16/10;max-width:100%;border-radius:8px;display:grid;place-items:center}
+.art img.mark{width:24%;max-height:46%}
+.art img.deco{width:58%}
+.art-cap{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.88)}
 .card .pic .ini{font-family:var(--mono);font-size:24px;color:var(--muted)}
 .card .bd{padding-top:11px;display:grid;gap:3px}
 .card h3{font-size:16px;line-height:1.25}
@@ -599,7 +603,8 @@ const CASES=[
   dec:[["A simulation mode","Classic Bluetooth only works on real hardware, so a simulator feeds the same pipeline during development.","The simulator has to stay close to real sensor behaviour."],
        ["A background-relative threshold","A point is flagged above 2.5 times the running average, which adapts to the soil of each site.","The first points cannot be flagged, and slow drift raises the baseline."],
        ["Plotly in a WebView","The 3D surface reuses Plotly and avoids a native 3D engine.","The WebView bridge adds rendering overhead."]],
-  media:{cap:"lib/services/anomaly_detector.dart",code:String.raw`/// Running-average void detector:
+  art:"Android · Flutter · Bluetooth",
+  excerpt:{cap:"lib/services/anomaly_detector.dart",code:String.raw`/// Running-average void detector:
 /// anomaly if rho > multiplier x background avg.
 bool evaluate(double rho) {
   if (_count < 3) {
@@ -658,7 +663,7 @@ $("cases").innerHTML=CASES.map((c,ci)=>{
   if(c.shots){
     const th=c.shots.length>1?`<div class="thumbs" role="group" aria-label="${esc(p.n)} screens">${c.shots.map((s,i)=>`<button type="button" data-c="${ci}" data-i="${i}" aria-current="${i===0}" aria-label="Show ${esc(s[1])}"><img src="img/t/${s[0]}.jpg" alt="" loading="lazy" decoding="async"></button>`).join("")}</div>`:"";
     media=`<div id="st-${ci}">${stageFrame(`img/${c.shots[0][0]}.jpg`,`${p.n} · ${c.shots[0][1]}`)}</div>${th}`;
-  }else media=codeBlock(c.media);
+  }else if(c.art)media=`<div class="art cover" style="--c:${coverColor(c.id)}"><img class="deco" src="${whiteGlyph(c.id)}" alt=""><img class="mark" src="${whiteGlyph(c.id)}" alt="${esc(p.n)}"><span class="art-cap">${esc(c.art)}</span></div>`;else media=codeBlock(c.media);
   const src=c.link?`<p class="src"><a href="${c.link}" target="_blank" rel="noopener">Source on GitHub</a></p>`:"";
   return `<article class="case">
     <div class="c-head"><div class="c-logo">${lg}</div><div><h3>${esc(p.n)}</h3><p>${esc(c.one)}</p></div></div>
