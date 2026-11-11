@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00a651"/>
+            <stop offset="100%" stop-color="#006b33"/>
+        </linearGradient>
+    </defs>
+    <!-- Background Circle -->
+    <circle cx="32" cy="32" r="30" fill="url(#grad)" stroke="#ffffff" stroke-width="2"/>
+    <!-- Ball Details -->
+    <circle cx="32" cy="32" r="24" fill="#ffffff" opacity="0.95"/>
+    <!-- Ball Panels -->
+    <polygon points="32,20 40,26 37,36 27,36 24,26" fill="#101216"/>
+    <!-- Radiating Lines -->
+    <line x1="32" y1="20" x2="32" y2="12" stroke="#101216" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="40" y1="26" x2="48" y2="22" stroke="#101216" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="37" y1="36" x2="44" y2="44" stroke="#101216" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="27" y1="36" x2="20" y2="44" stroke="#101216" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="24" y1="26" x2="16" y2="22" stroke="#101216" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
