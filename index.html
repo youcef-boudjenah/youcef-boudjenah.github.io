@@ -150,6 +150,7 @@ details.ex .code{margin-top:10px}
 .card:hover .pic{border-color:var(--line-2)}
 .card .pic img.shot{width:100%;height:100%;object-fit:cover;object-position:top}
 .card .pic img.logo{width:84px;max-width:44%;max-height:70%;object-fit:contain;background:#FFFFFF;padding:7px;border-radius:8px}
+.c-logo img.gen,.card .pic img.logo.gen,.logo-big img.gen{padding:0}
 .card .pic .ini{font-family:var(--mono);font-size:24px;color:var(--muted)}
 .card .bd{padding-top:11px;display:grid;gap:3px}
 .card h3{font-size:16px;line-height:1.25}
@@ -432,6 +433,32 @@ const P=[
  ["mefti","Mefti Auto-Importation","web","2026-10-19","PHP, GSAP","Website for an import broker: sourcing, sea freight and customs.","Importers","Mefti_autoimportation"],
  ["reelman","REELMONTAGMAN","tool","2026-09-23","Remotion, React","Short-video maker with animated Arabic and Darija text.","Content creators","REELMONTAGMAN"]
 ].map(a=>({id:a[0],n:a[1],ind:a[2],d:a[3],s:a[4],t:a[5],u:a[6],gh:a[7]||"",pub:!!a[8]}));
+/* Drawn icons for projects that have no logo of their own */
+const GLYPH={
+ docvia:["#2F5DAA",'<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M8 13h8M8 16h5"/>'],
+ dms:["#4A5568",'<rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9M10 13h4"/>'],
+ pos:["#0F766E",'<path d="M5 3v18l2.5-1.5L10 21l2-1.5 2 1.5 2.5-1.5L19 21V3z"/><path d="M9 8h6M9 12h6M9 16h3"/>'],
+ delivo:["#B45309",'<path d="M2 6h12v11H2zM14 10h4l4 4v3h-8z"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/>'],
+ invoicegen:["#1D4ED8",'<path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4M9 11h7M9 14h7M9 17h4"/>'],
+ embarazo:["#DB2777",'<path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/><circle cx="12" cy="11" r="1.6"/>'],
+ repharma:["#059669",'<path d="M10.5 20.5a5 5 0 0 1-7-7l10-10a5 5 0 0 1 7 7z"/><path d="M8.5 8.5l7 7"/>'],
+ unive:["#1E3A8A",'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/>'],
+ library:["#7C3AED",'<path d="M12 6C10 4.5 7 4 3 4v15c4 0 7 .5 9 2 2-1.5 5-2 9-2V4c-4 0-7 .5-9 2z"/><path d="M12 6v15"/>'],
+ tcf:["#0369A1",'<path d="M21 12a8 8 0 0 1-11.7 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/>'],
+ cod:["#15803D",'<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 10v.01M18 14v.01"/>'],
+ vitally:["#EA580C",'<path d="M7 14a4 4 0 1 1 1.2-7.8A4.5 4.5 0 0 1 16 6.2 4 4 0 1 1 17 14v6H7z"/><path d="M7 17h10"/>'],
+ aladin:["#A21CAF",'<path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="3.5"/>'],
+ rag:["#4338CA",'<path d="M13 3H6v18h5M13 3l5 5v2M13 3v5h5"/><circle cx="16" cy="16" r="3.5"/><path d="M18.6 18.6L21 21"/>'],
+ motorsense:["#92400E",'<path d="M2 9c2-4 4-4 6 0s4 4 6 0 4-4 8 0"/><path d="M2 15h20M2 19h6M12 19h10"/>'],
+ prevmaint:["#475569",'<circle cx="12" cy="12" r="6.5"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3.5M12 18.5V22M2 12h3.5M18.5 12H22M4.9 4.9l2.5 2.5M16.6 16.6l2.5 2.5M4.9 19.1l2.5-2.5M16.6 7.4l2.5-2.5"/>'],
+ eurusd:["#0E7490",'<path d="M6 3v4M6 15v6M12 2v6M12 18v4M18 5v3M18 16v4"/><rect x="4" y="7" width="4" height="8" rx=".5"/><rect x="10" y="8" width="4" height="10" rx=".5"/><rect x="16" y="8" width="4" height="8" rx=".5"/>'],
+ titanic:["#1E40AF",'<path d="M3 14l2 6h14l2-6-9-3z"/><path d="M12 11V4M8 9.5V6h8v3.5"/>'],
+ pfe:["#6D28D9",'<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M10.8 7.2L6.2 15.8M13.2 7.2l4.6 8.6M7.5 18h9"/>'],
+ farouq:["#0D9488",'<path d="M3 7a2 2 0 0 1 2-2h13v4"/><path d="M3 7v11a2 2 0 0 0 2 2h15V9H5a2 2 0 0 1-2-2z"/><circle cx="16.5" cy="14.5" r="1"/>'],
+ reelman:["#BE123C",'<rect x="3" y="9" width="18" height="12" rx="1"/><path d="M3 9l1-5h16l1 5M8 4L7 9M13 4l-1 5M18 4l-1 5"/><path d="M10 13l4 2-4 2z"/>']
+};
+Object.entries(GLYPH).forEach(([id,[c,g]])=>{LOGOS[id]="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="${c}"/><g transform="translate(14 14) scale(1.5)" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${g}</g></svg>`);});
+const genC=id=>GLYPH[id]?" gen":"";
 const SOCIAL=[["LinkedIn","https://www.linkedin.com/in/youcef-boudjenah/","i-in"],["GitHub","https://github.com/youcef-boudjenah","i-gh"],["Instagram","https://www.instagram.com/boudjenah.youcef.off/","i-ig"],["Facebook","https://www.facebook.com/profile.php?id=61589734882758","i-fb"]];
 const CASES=[
  {id:"gedaerp",one:"Multi-tenant ERP covering the commercial and accounting cycle.",
@@ -566,7 +593,7 @@ $("social1").innerHTML=soc;$("social2").innerHTML=soc;
 
 $("cases").innerHTML=CASES.map((c,ci)=>{
   const p=byId[c.id];
-  const lg=LOGOS[c.id]?`<img src="${LOGOS[c.id]}" alt="">`:`<span>${ini(p.n)}</span>`;
+  const lg=LOGOS[c.id]?`<img class="${genC(c.id)}" src="${LOGOS[c.id]}" alt="">`:`<span>${ini(p.n)}</span>`;
   let media;
   if(c.shots){
     const th=c.shots.length>1?`<div class="thumbs" role="group" aria-label="${esc(p.n)} screens">${c.shots.map((s,i)=>`<button type="button" data-c="${ci}" data-i="${i}" aria-current="${i===0}" aria-label="Show ${esc(s[1])}"><img src="img/${s[0]}.jpg" alt="" loading="lazy"></button>`).join("")}</div>`:"";
@@ -604,7 +631,7 @@ const REST=P.filter(p=>!featured.has(p.id));
 let active="all",expanded=false;const LIMIT=12;
 function pic(p,big){
   if(SHOTS[p.id])return big?frame(`img/${p.id}-1.jpg`,p.n):`<img class="shot" src="img/${p.id}-1.jpg" alt="" loading="lazy">`;
-  if(LOGOS[p.id])return big?`<div class="logo-big"><img src="${LOGOS[p.id]}" alt="${esc(p.n)} logo"></div>`:`<img class="logo" src="${LOGOS[p.id]}" alt="" loading="lazy">`;
+  if(LOGOS[p.id])return big?`<div class="logo-big"><img class="${genC(p.id)}" src="${LOGOS[p.id]}" alt="${esc(p.n)} logo"></div>`:`<img class="logo${genC(p.id)}" src="${LOGOS[p.id]}" alt="" loading="lazy">`;
   return big?`<div class="logo-big"><span class="ini">${ini(p.n)}</span></div>`:`<span class="ini">${ini(p.n)}</span>`;
 }
 function filters(){
